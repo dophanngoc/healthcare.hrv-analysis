@@ -10,8 +10,8 @@ mmWave_data_file = open(args.data_file, 'r')
 hrv_dataplots = []
 initial_dataplots = ""
 for line in mmWave_data_file:
-    line = line.split("WAVE: ")[1]
-    hrv_dataplots.append(int(line.rstrip('\n')))
+    line = line.split("HER: ")[1]
+    hrv_dataplots.append(60000//int(line.rstrip('\n')))
 
 print(hrv_dataplots)
 
